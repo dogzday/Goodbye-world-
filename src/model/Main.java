@@ -10,12 +10,14 @@ public class Main
     {
         int linearSearchStringListReturn;
         int linearSearchIntegerListReturn;
+        int linearSearchNotFoundReturn;
 
         List<String> stringList;
         List<Integer> integerList;
 
         Predicate<String> filterReynolds = s -> s.equals("Ryan");
         Predicate<Integer> filter20 = n -> n == 20;
+        Predicate<Integer> filter50 = n -> n == 50;
 
         stringList = new ArrayList<>();
         integerList = new ArrayList<>();
@@ -35,9 +37,11 @@ public class Main
 
         linearSearchStringListReturn = linearSearch(stringList, filterReynolds);
         linearSearchIntegerListReturn = linearSearch(integerList, filter20);
+        linearSearchNotFoundReturn = linearSearch(integerList, filter50);
 
         System.out.println(linearSearchStringListReturn);
         System.out.println(linearSearchIntegerListReturn);
+        System.out.println(linearSearchNotFoundReturn);
     }
 
     public static <T> int linearSearch(List<T> list, Predicate<T> check)
